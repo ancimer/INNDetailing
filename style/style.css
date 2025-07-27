@@ -1,0 +1,560 @@
+/* Osnovni reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: #f1f1f1;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #111;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+.nav ul li a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #f3d87f;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://source.unsplash.com/1600x900/?luxury-car,shine') no-repeat center center/cover;
+  padding: 150px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  color: #d4af37;
+  text-shadow: 0 0 15px #b38e2e;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  background-color: #d4af37;
+  color: #0d0d0d;
+  padding: 14px 40px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b38e2e;
+  color: #fff;
+}
+
+/* Sections padding */
+.section-padding {
+  padding: 70px 0;
+}
+
+/* About */
+.about h2 {
+  color: #d4af37;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Services */
+.services h2 {
+  color: #d4af37;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+}
+
+.service-item {
+  background-color: #1a1a1a;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px #000;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #b38e2e;
+}
+
+.service-item i {
+  font-size: 3.2rem;
+  color: #d4af37;
+  margin-bottom: 18px;
+}
+
+.service-item h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Pricing */
+.pricing h2 {
+  color: #d4af37;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 25px;
+}
+
+.pricing-item {
+  background-color: #1a1a1a;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+  transition: box-shadow 0.3s ease;
+}
+
+.pricing-item:hover {
+  box-shadow: 0 0 20px #b38e2e;
+}
+
+.pricing-item h3 {
+  font-size: 1.7rem;
+  color: #d4af37;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.pricing-item p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #f3d87f;
+}
+
+.gallery-section {
+  background: #0a0a0a;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  color: #d4af37;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(212, 175, 55, 0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.contact-section {
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.call-button {
+  display: inline-block;
+  background: #d4af37;
+  color: #0a0a0a;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.call-button:hover {
+  background: #f3d87f;
+  transform: scale(1.05);
+}
+
+
+.contact-info {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ccc;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: #d4af37;
+  font-size: 1.6rem;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #f3d87f;
+}
+
+/* Map */
+.map-container {
+  max-width: 600px;
+  margin: 20px auto 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 25px #000;
+}
+
+/* FAQ */
+.faq h2 {
+  color: #d4af37;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.faq-item {
+  background-color: #1a1a1a;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+}
+
+.faq-item h3 {
+  color: #f3d87f;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.faq-item p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.footer {
+  background-color: #0a0a0a;
+  padding: 60px 20px 30px;
+  color: #ccc;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer-column h3.footer-logo {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.footer-column h4 {
+  font-size: 1.3rem;
+  color: #f3d87f;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 8px;
+}
+
+.footer-column p,
+.footer-column ul li a {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a:hover {
+  color: #d4af37;
+  padding-left: 3px;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: #d4af37;
+  font-size: 1.6rem;
+  margin-right: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f3d87f;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #222;
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 30px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .services-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 50px; /* prilagodi po želji */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d4af37;
+  user-select: none;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* Tablice (do 1024px) */
+@media (max-width: 1024px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+/* Telefoni (do 768px) */
+@media (max-width: 768px) {
+  /* Hero sekcija */
+  .hero-content h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .hero .btn {
+    display: block;
+    margin: 20px auto;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr; /* vse v 1 stolpec */
+    text-align: center;
+  }
+  .footer-column h4 {
+    margin-top: 20px;
+  }
+  .social-links a {
+    font-size: 1.8rem;
+    margin: 10px;
+  }
+
+ /* Navigacija ostane horizontalna tudi na mobilnih */
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow-x: auto;  /* omogoči horizontalni scroll na majhnih zaslonih */
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav ul li {
+  white-space: nowrap; /* da se elementi ne lomijo v več vrstic */
+}
+
+  /* Galerija */
+  .gallery-slider img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+}
+
+/* Majhni telefoni (do 480px) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
